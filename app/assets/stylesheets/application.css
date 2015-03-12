@@ -25,3 +25,17 @@
 .mtl {
   margin-top: 20px;
 }
+
+.alert{
+  padding: 10px;
+}
+
+.alert-error{
+  color: white;
+  background-color: red;
+}
+
+.alert-success{
+  color: white;
+  background-color: green;
+}

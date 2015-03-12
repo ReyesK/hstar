@@ -6,7 +6,7 @@
 
   <div class="mtm">
     <%= f.label :type %>:
-    <%= f.text_field :type %>
+    <%= f.select :type, options_for_select(Word::WORD_TYPES) %>
   </div>
 
   <div class="mtm">

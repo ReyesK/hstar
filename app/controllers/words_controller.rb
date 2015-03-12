@@ -1,20 +1,26 @@
 class WordsController < ApplicationController
 
-  def index
-
-  end
-
   def new
     @word = Word.new
   end
 
   def create
-    @word = Word.create(word_params)
+
+    text = params[:word][:text]
+    exists = Word.exists?(text: text)
+
+    if exists
+      @word = Word.where(text: text).first
+    else
+      @word = Word.create(word_params)
+    end
 
     if @word.save
-      render 'new', flash: "word created"
+      flash[:success] = "word created"
+      redirect_to '/'
     else
-
+      flash[:error] = "era era era eh eh eh eh eh eh eh"
+      redirect_to new_word_path
     end
   end
 

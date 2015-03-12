@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get '/' => "home#index"
+  get '/generate_excuse' => "home#generate_excuse"
   resources :words, only: [:new, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.

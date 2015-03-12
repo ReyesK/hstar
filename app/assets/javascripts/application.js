@@ -18,5 +18,9 @@
 $(document).ready(function(){
   $(".generate_button").click(function(e){
     console.log("generate hurr");
+    $.ajax({
+      type: 'GET',
+      url: '/generate_excuse.js'
+    });
   });
 });

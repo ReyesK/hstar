@@ -14,12 +14,12 @@
 ActiveRecord::Schema.define(version: 20150312135718) do
 
   create_table "words", force: :cascade do |t|
-    t.string   "text"
-    t.string   "type"
-    t.string   "article"
+    t.string   "text",       limit: 255
+    t.string   "type",       limit: 255
+    t.string   "article",    limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "pronoun"
+    t.string   "pronoun",    limit: 255
   end
 
 end

@@ -11,7 +11,6 @@ class WordsController < ApplicationController
   def create
     @word = Word.create(word_params)
 
-    respond
     if @word.save
       render 'new', flash: "word created"
     else

@@ -1,0 +1,26 @@
+<%= form_for @word do |f|%>
+  <div class="mtm">
+    <%= f.label :text %>:
+    <%= f.text_field :text %>
+  </div>
+
+  <div class="mtm">
+    <%= f.label :type %>:
+    <%= f.text_field :type %>
+  </div>
+
+  <div class="mtm">
+    <%= f.label :article %>:
+    <%= f.text_field :article %>
+  </div>
+
+  <div class="mtm">
+    <%= f.label :pronoun %>:
+    <%= f.text_field :pronoun %>
+  </div>
+
+  <div class="mtm">
+    <%= f.submit %>
+  </div>
+
+<% end %>

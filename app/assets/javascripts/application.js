@@ -24,19 +24,19 @@ $(document).ready(function(){
   var margLeft = 0;
   var margTop = 0;
 
-  $( "#moveMe" ).mouseover(function() {
+  /*$( ".generate_button" ).mouseover(function() {
     if(buttonCount <3)
     {
-      $('#moveMe').css({ 'margin-left': margLeft+'%','width': margTop+'%' });
+      $('.generate_button').css({ 'margin-left': margLeft+'px','width': margTop+'px', 'width':'125px' });
 
       margLeft= randomNumber(0,90);
       margTop= randomNumber(0,50);
 
       buttonCount++;
     }
-  });
+  });*/
 
-  var $win = $(window),
+  /*var $win = $(window),
     w = 0,h = 0,
     rgb = [],
     getWidth = function() {
@@ -57,7 +57,7 @@ $win.resize(getWidth).mousemove(function(e) {
 
     $(document.body).css('background','rgb('+rgb.join(',')+')');
 
-}).resize(); //end resize/color bg
+}).resize(); //end resize/color bg*/
 
 //helper functions
 function randomNumber(min,max)

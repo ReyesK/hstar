@@ -14,8 +14,61 @@
  *= require_self
  */
 
+
+body{
+  background: linear-gradient(270deg, #e32b4a, #f3981a, #f3e51a, #1af35c, #1a9bf3, #9b1af3);
+  background-size: 1200% 1200%;
+  -webkit-animation: bgScroll 30s ease infinite;
+  -moz-animation: bgScroll 30s ease infinite;
+  animation: bgScroll 30s ease infinite;
+}
+
+@-webkit-keyframes bgScroll {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes bgScroll {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes bgScroll {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.btn{
+  z-index:20;
+	display:block;
+	padding: 5px 5px 5px 5px;
+	box-shadow: 0 0 25px 1px #ffffff;
+	border-radius: 15px;
+  border: 1px solid transparent;
+	background:rgba(255,255,255,.3);
+  position:inherit;
+}
+
+.generate_button{
+  
+}
+
+button
+{
+  background:rgba(255,255,255,.3);
+  padding:15px;
+  width:100px;
+  height:75px;
+  position: absolute;
+}
+
+
 .center {
   text-align: center;
+  width: 700px ;
+  margin-left: auto ;
+  margin-right: auto ;
 }
 
 .mtm {
@@ -26,8 +79,16 @@
   margin-top: 20px;
 }
 
-#moveMe
-{
-  width:25%;
-  height:25%;
+.alert{
+  padding: 10px;
+}
+
+.alert-error{
+  color: white;
+  background-color: red;
+}
+
+.alert-success{
+  color: white;
+  background-color: green;
 }

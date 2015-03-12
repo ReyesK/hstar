@@ -16,6 +16,7 @@
 //= require_tree .
 
 $(document).ready(function(){
+
   $(".generate_button").click(function(e){
     console.log("generate hurr");
   });//end generate

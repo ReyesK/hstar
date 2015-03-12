@@ -17,7 +17,6 @@
 
 $(document).ready(function(){
   $(document).on('click', '.generate_button', function(e){
-    console.log("generate hurr");
     $.ajax({
       type: 'GET',
       url: '/generate_excuse.js'

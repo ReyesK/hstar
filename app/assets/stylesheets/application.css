@@ -15,12 +15,12 @@
  */
 
  @font-face {
-    font-family: orangeJuice;
-    src: url(orange_juice/orange-juice-2.0.ttf);
+    font-family: myFont;
+    src: url(djb_poppyseed/DJB-Poppyseed.ttf);
 }
 
  html {
-   font-family: orangeJuice;
+   font-family: myFont;
    -webkit-text-size-adjust: 100%;
        -ms-text-size-adjust: 100%;
  }
@@ -65,6 +65,7 @@ body{
 }
 
 .generate_button{
+  margin: 50px 50px 0px 50px;
   width: 400px;
   height: 75px;
 }
@@ -78,7 +79,7 @@ body{
 
 #xq
 {
-  font-size:500%;
+  font-size:300%;
 }
 
 .mtm {

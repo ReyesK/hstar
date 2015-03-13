@@ -81,6 +81,10 @@ body{
   display: none;
 }
 
+.excuse_count {
+  color: green;
+}
+
 #xq
 {
   font-size:300%;

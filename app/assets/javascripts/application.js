@@ -18,8 +18,11 @@
 $(document).ready(function(){
 
   $(".generate_button").click(function(e){
-    console.log("generate hurr");
-  });//end generate
+    $.ajax({
+      type: 'GET',
+      url: '/generate_excuse.js'
+    });
+  });
 
   var buttonCount = 0;
   var margLeft = 0;

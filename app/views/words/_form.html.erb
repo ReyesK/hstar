@@ -11,12 +11,12 @@
 
   <div class="mtm">
     <%= f.label :article %>:
-    <%= f.text_field :article %>
+    <%= f.select :article, options_for_select(Word::ARTICLE_OPTS) %>
   </div>
 
   <div class="mtm">
     <%= f.label :pronoun %>:
-    <%= f.text_field :pronoun %>
+    <%= f.select :pronoun, options_for_select(Word::PRONOUN_OPTS) %>
   </div>
 
   <div class="mtm">

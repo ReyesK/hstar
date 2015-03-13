@@ -39,7 +39,7 @@ body{
     100%{background-position:0% 50%}
 }
 
-.btn{
+.home_btn{
   z-index:20;
 	display:block;
 	padding: 5px 5px 5px 5px;
@@ -51,16 +51,10 @@ body{
 }
 
 .generate_button{
-  
-}
-
-button
-{
   background:rgba(255,255,255,.3);
   padding:15px;
-  width:100px;
+  width:200px;
   height:75px;
-  position: absolute;
 }
 
 
@@ -77,6 +71,14 @@ button
 
 .mtl {
   margin-top: 20px;
+}
+
+.mbm {
+  margin-bottom: 10px;
+}
+
+.mbl {
+  margin-bottom: 20px;
 }
 
 .alert{

@@ -29,7 +29,7 @@ class Word < ActiveRecord::Base
     end
 
     while verb2.nil?
-      verb2 = Word.where("id >= ? and type=?", rand(count), Word::VERB_TYPE).first
+      verb2 = Word.where("(id != ? and id >= ?) and type=?", verb1.id, rand(count), Word::VERB_TYPE).first
     end
 
     while noun1.nil?
@@ -37,7 +37,7 @@ class Word < ActiveRecord::Base
     end
 
     while noun2.nil?
-      noun2 = Word.where("id >= ? and type=?", rand(count), Word::NOUN_TYPE).first
+      noun2 = Word.where("(id != ? and id >= ?) and type=?", noun1.id, rand(count), Word::NOUN_TYPE).first
     end
 
     "I have to #{verb1.text} #{noun1.article} #{noun1.text} because #{noun2.text} #{verb2.text} #{noun1.pronoun}."

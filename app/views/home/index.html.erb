@@ -1,12 +1,17 @@
 
-
 <div class="center">
 
-  <%= image_tag asset_path('xqbtn.png'), onMouseover: "this.src='/assets/xqbtnhover.png';", onMouseout: "this.src='/assets/xqbtn.png'", class: "generate_button" %>
+  <%= image_tag asset_path('xqbtn.png'), onMouseover: "this.src='/assets/xqbtnhover.png';", onMouseout: "this.src='/assets/xqbtn.png'", class: "generate_button ml" %>
 
-  <div id="xq" class="excuse_container mtm"></div>
+  <div id="xq" class="excuse_container mbl"></div>
 
   <!-- <div class="mtm">
     <%= link_to 'add word', '/words/new' %>
   </div> -->
+</div>
+
+<div class="mbm">
+  <% flash.each do |key, value| %>
+    <div class="center alert alert-<%= key %>"><%= value %></div>
+  <% end %>
 </div>

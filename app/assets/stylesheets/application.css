@@ -18,7 +18,7 @@
 
  @font-face {
     font-family: myFont;
-    src: url(djb_poppyseed/DJB-Poppyseed.ttf);
+    src: url(DJB-Poppyseed.ttf) format("truetype");
 }
 
  html {

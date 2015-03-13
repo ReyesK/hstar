@@ -65,7 +65,6 @@ body{
 }
 
 .generate_button{
-  margin: 50px 50px 0px 50px;
   width: 400px;
   height: 75px;
 }
@@ -86,12 +85,16 @@ body{
   font-size:300%;
 }
 
+.ml
+{
+  margin: 50px;
+}
 .mtm {
-  margin-top: 75px;
+  margin-top: 10px;
 }
 
 .mtl {
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .mbm {
@@ -99,7 +102,7 @@ body{
 }
 
 .mbl {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .alert{
@@ -115,6 +118,7 @@ body{
   color: white;
   background-color: green;
 }
+<<<<<<< HEAD
 
 
 a {
@@ -229,3 +233,5 @@ a:focus {
     -webkit-transform: scaleY(1.0);
   }
 }
+=======
+>>>>>>> d62b88c9f23e97fd25aff00a2b04eec408d040fe

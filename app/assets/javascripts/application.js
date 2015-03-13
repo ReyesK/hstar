@@ -18,9 +18,14 @@
 $(document).ready(function(){
 
   $(".generate_button").click(function(e){
+    $("#loader").show(); // show loader
+    $("#xq").html(""); // remove text
     $.ajax({
       type: 'GET',
-      url: '/generate_excuse.js'
+      url: '/generate_excuse.js',
+      success: function(){
+        $("#loader").hide(); // hide loader
+      }
     });
   });
 

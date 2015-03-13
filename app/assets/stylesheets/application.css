@@ -68,9 +68,10 @@ body{
   height: 75px;
 }
 
+
+
 .center {
   text-align: center;
-  width: 1280px ;
   margin-left: auto ;
   margin-right: auto ;
 }
@@ -84,9 +85,10 @@ body{
   font-size:300%;
 }
 
-.ml
+.mtbl
 {
-  margin: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 .mtm {
   margin-top: 10px;
@@ -117,69 +119,21 @@ body{
   color: white;
   background-color: green;
 }
-<<<<<<< HEAD
 
-
-a {
-  color: #337ab7;
-  text-decoration: none;
-}
-a:hover,
-a:focus {
-  color: #23527c;
-  text-decoration: underline;
-}
-a:focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
+image
+{
+  width:100%;
 }
 
-.btn {
-  display: inline-block;
-  padding: 25px;
-  margin-bottom: 0;
-  font-size: 500%;
-  font-weight: normal;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-      touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 10px;
+@media (max-width:400px) {
+    .generate_button {
+        width:350px;
+    }
+    #xq{
+      font-size:200%;
+    }
 }
-.btn:focus,
-.btn:active:focus,
-.btn.active:focus,
-.btn.focus,
-.btn:active.focus,
-.btn.active.focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  box-shadow: 0 0 25px 1px #ffffff;
-  outline-offset: -2px;
-}
-.btn:hover,
-.btn:focus,
-.btn.focus {
-  color: #333;
-  text-decoration: none;
-}
-.btn:active,
-.btn.active {
-  background-image: none;
-  outline: 0;
-  -webkit-box-shadow: inset 0 3px 25px rgba(0, 0, 0, .125);
-          box-shadow: inset 0 3px 25px rgba(0, 0, 0, .125);
-}
+
 .spinner {
   margin: 100px auto;
   width: 100px;
@@ -232,5 +186,3 @@ a:focus {
     -webkit-transform: scaleY(1.0);
   }
 }
-=======
->>>>>>> d62b88c9f23e97fd25aff00a2b04eec408d040fe

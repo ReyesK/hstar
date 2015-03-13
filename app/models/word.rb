@@ -36,24 +36,31 @@ class Word < ActiveRecord::Base
     # I have to [verb] [article] [noun] because [noun] [verb] [pronoun]
 
     adv = Wordnik.words.get_random_word(hasDictionaryDef: true, includePartOfSpeech: 'adverb')["word"]
-    adv2 = Wordnik.words.get_random_word(hasDictionaryDef: true, includePartOfSpeech: 'adverb')["word"]
+    adv_def = Wordnik.word.get_definitions(adv, partOfSpeech: 'adverb')[0]["text"]
     verb = Wordnik.words.get_random_word(hasDictionaryDef: true, includePartOfSpeech: 'verb-transitive')["word"]
     adj = Wordnik.words.get_random_word(hasDictionaryDef: true, includePartOfSpeech: 'adjective')["word"]
-    adj2 = Wordnik.words.get_random_word(hasDictionaryDef: true, includePartOfSpeech: 'adjective')["word"]
     noun = Wordnik.words.get_random_word(hasDictionaryDef: true, includePartOfSpeech: 'noun')["word"]
     phrases = Wordnik.words.get_phrases(noun, limit: 10)
 
     if phrases.empty?
       phrase = noun
+      phrase_def = Wordnik.word.get_definitions(phrase, partOfSpeech: 'noun')[0]["text"]
+      phrase_string = "<span title='#{phrase_def}'>#{phrase}</span>"
     else
       phrase_hash = phrases[rand(phrases.size)]
-      phrase = phrase_hash["gram1"] + " " + phrase_hash["gram2"]
+      phrase_piece1 = phrase_hash["gram1"]
+      phrase_piece2 = phrase_hash["gram2"]
+      phrase_def_hash1 = Wordnik.word.get_definitions(phrase_piece1)
+      phrase_def1 = phrase_def_hash1.empty? ? "" : phrase_def_hash1[0]["text"]
+      phrase_def_hash2 = Wordnik.word.get_definitions(phrase_piece2)
+      phrase_def2 = phrase_def_hash2.empty? ? "" : phrase_def_hash2[0]["text"]
+      phrase_string = "<span title='#{phrase_def1}'>#{phrase_piece1}</span> <span title='#{phrase_def2}'>#{phrase_piece2}</span>"
     end
 
 
     strings = []
-    strings << "I had to #{adv} #{verb} the #{phrase}."
-    strings << "my #{phrase} is #{adj2}."
+    strings << "I had to <span title=''#{adv_def}''>#{adv}</span> <span>#{verb}</span> the #{phrase_string}"
+    strings << "my #{phrase_string} is <span>#{adj}</span>."
 
     strings[rand(strings.size)]
 

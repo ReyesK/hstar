@@ -13,16 +13,17 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery-ui
 //= require_tree .
 
 $(document).ready(function(){
-
-  $(".generate_button").click(function(e){
-    $.ajax({
-      type: 'GET',
-      url: '/generate_excuse.js'
+    $(document).tooltip();
+    $(".generate_button").click(function(e){
+        $.ajax({
+            type: 'GET',
+            url: '/generate_excuse.js'
+        });
     });
-  });
 
   var buttonCount = 0;
   var margLeft = 0;

@@ -26,7 +26,7 @@ class Word < ActiveRecord::Base
                     ["They", "they"], ["Them", "them"], ["Their", "their"], ["Theirs", "theirs"], ["Themselves", "themselves"]
                  ]
 
-                 
+
   def noun?
     type == NOUN_TYPE
   end
@@ -42,7 +42,6 @@ class Word < ActiveRecord::Base
     adj2 = Wordnik.words.get_random_word(hasDictionaryDef: true, includePartOfSpeech: 'adjective')["word"]
     noun = Wordnik.words.get_random_word(hasDictionaryDef: true, includePartOfSpeech: 'noun')["word"]
     phrases = Wordnik.words.get_phrases(noun, limit: 10)
-    Rails.logger.debug(phrases)
 
     if phrases.empty?
       phrase = noun
@@ -54,7 +53,7 @@ class Word < ActiveRecord::Base
 
     strings = []
     strings << "I had to #{adv} #{verb} the #{phrase}"
-    strings << "My #{phrase} is #{adj2}"
+    strings << "my #{phrase} is #{adj2}"
 
     strings[rand(strings.size)]
 

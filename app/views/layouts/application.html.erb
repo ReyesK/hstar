@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>XQ Sez</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>XQ Sez</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-    <div class="center">
-          <div class="btn">
-              <h3><%= link_to 'XQ Sez', '/' %></h3>
-          </div>
-    </div><!--end center-->
+      <div class="center mbl">
+        <div class="home_btn">
+          <h3><%= link_to 'XQ Sez', '/' %></h3>
+        </div>
+      </div>
 
+    <div class="mbm">
+      <% flash.each do |key, value| %>
+        <div class="center alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+    </div>
+    <%= yield %>
 
-<% flash.each do |key, value| %>
-  <div class="center alert alert-<%= key %>"><%= value %></div>
-<% end %>
-<%= yield %>
-
-</body>
+  </body>
 </html>

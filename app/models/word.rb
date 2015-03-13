@@ -8,8 +8,23 @@ class Word < ActiveRecord::Base
 
   NOUN_TYPE = "0"
   VERB_TYPE = "1"
+  ADJ_TYPE  = "2"
+  ADV_TYPE  = "3"
 
   WORD_TYPES = [["noun", NOUN_TYPE], ["verb", VERB_TYPE]]
+
+  ARTICLE_OPTS = [["A", "a"], ["An", "an"], ["The", "the"], ["My", "my"]]
+
+  PRONOUN_OPTS = [
+                    ["I", "I"], ["Me", "me"], ["My", "my"], ["Mine", "mine"], ["Myself", "myself"],
+                    ["You", "you"], ["Your", "your"], ["Yours", "yours"], ["Yourself", "yourself"],
+                    ["He", "he"], ["Him", "him"], ["His", "his"], ["Himself", "himself"],
+                    ["She", "she"], ["Her", "her"], ["Hers", "hers"], ["Herself", "herself"],
+                    ["It", "it"], ["Its", "its"], ["Itself", "itself"],
+                    ["We", "we"], ["Us", "us"], ["Our", "our"], ["Ours", "ours"], ["Ourselves", "ourselves"],
+                    ["You", "you"], ["Your", "your"], ["Yours", "yours"], ["Yourselves", "yourselves"],
+                    ["They", "they"], ["Them", "them"], ["Their", "their"], ["Theirs", "theirs"], ["Themselves", "themselves"]
+                 ]
 
   def noun?
     type == NOUN_TYPE

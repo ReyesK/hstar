@@ -64,8 +64,6 @@ body{
   border: 1px solid transparent;
   background:rgba(255,255,255,.3);
   padding:15px;
-  width:200px;
-  height:75px;
 }
 
 
@@ -129,9 +127,9 @@ a:focus {
 
 .btn {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 25px;
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 500%;
   font-weight: normal;
   line-height: 1.42857143;
   text-align: center;

@@ -26,7 +26,7 @@ class Word < ActiveRecord::Base
                     ["They", "they"], ["Them", "them"], ["Their", "their"], ["Theirs", "theirs"], ["Themselves", "themselves"]
                  ]
 
-                 
+
   def noun?
     type == NOUN_TYPE
   end
@@ -53,8 +53,8 @@ class Word < ActiveRecord::Base
 
 
     strings = []
-    strings << "I had to #{adv} #{verb} the #{phrase}"
-    strings << "My #{phrase} is #{adj2}"
+    strings << "I had to #{adv} #{verb} the #{phrase}."
+    strings << "my #{phrase} is #{adj2}."
 
     strings[rand(strings.size)]
 

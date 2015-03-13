@@ -26,6 +26,7 @@ class Word < ActiveRecord::Base
                     ["They", "they"], ["Them", "them"], ["Their", "their"], ["Theirs", "theirs"], ["Themselves", "themselves"]
                  ]
 
+                 
   def noun?
     type == NOUN_TYPE
   end
@@ -33,29 +34,51 @@ class Word < ActiveRecord::Base
   def self.generate_excuse
     # here generate it
     # I have to [verb] [article] [noun] because [noun] [verb] [pronoun]
-    verb1 = nil
-    verb2 = nil
-    noun1 = nil
-    noun2 = nil
 
-    count = Word.last.id
-    while verb1.nil?
-      verb1 = Word.where("id >= ? and type=?", rand(count), Word::VERB_TYPE).first
+    adv = Wordnik.words.get_random_word(hasDictionaryDef: true, includePartOfSpeech: 'adverb')["word"]
+    adv2 = Wordnik.words.get_random_word(hasDictionaryDef: true, includePartOfSpeech: 'adverb')["word"]
+    verb = Wordnik.words.get_random_word(hasDictionaryDef: true, includePartOfSpeech: 'verb-transitive')["word"]
+    adj = Wordnik.words.get_random_word(hasDictionaryDef: true, includePartOfSpeech: 'adjective')["word"]
+    adj2 = Wordnik.words.get_random_word(hasDictionaryDef: true, includePartOfSpeech: 'adjective')["word"]
+    noun = Wordnik.words.get_random_word(hasDictionaryDef: true, includePartOfSpeech: 'noun')["word"]
+    phrases = Wordnik.words.get_phrases(noun, limit: 10)
+    Rails.logger.debug(phrases)
+
+    if phrases.empty?
+      phrase = noun
+    else
+      phrase_hash = phrases[rand(phrases.size)]
+      phrase = phrase_hash["gram1"] + " " + phrase_hash["gram2"]
     end
 
-    while verb2.nil?
-      verb2 = Word.where("(id != ? and id >= ?) and type=?", verb1.id, rand(count), Word::VERB_TYPE).first
-    end
 
-    while noun1.nil?
-      noun1 = Word.where("id >= ? and type=?", rand(count), Word::NOUN_TYPE).first
-    end
+    strings = []
+    strings << "I had to #{adv} #{verb} the #{phrase}"
+    strings << "My #{phrase} is #{adj2}"
 
-    while noun2.nil?
-      noun2 = Word.where("(id != ? and id >= ?) and type=?", noun1.id, rand(count), Word::NOUN_TYPE).first
-    end
+    strings[rand(strings.size)]
 
-    "I have to #{verb1.text} #{noun1.article} #{noun1.text} because #{noun2.text} #{verb2.text} #{noun1.pronoun}."
+
+    # OLD CRAP
+    # count = Word.last.id
+    # while verb1.nil?
+    #   verb1 = Word.where("id >= ? and type=?", rand(count), Word::VERB_TYPE).first
+    # end
+    #
+    # while verb2.nil?
+    #   verb2 = Word.where("(id != ? and id >= ?) and type=?", verb1.id, rand(count), Word::VERB_TYPE).first
+    # end
+    #
+    # while noun1.nil?
+    #   noun1 = Word.where("id >= ? and type=?", rand(count), Word::NOUN_TYPE).first
+    # end
+    #
+    # while noun2.nil?
+    #   noun2 = Word.where("(id != ? and id >= ?) and type=?", noun1.id, rand(count), Word::NOUN_TYPE).first
+    # end
+
+    # "I have to #{verb1.text} #{noun1.article} #{noun1.text} because #{noun2.text} #{verb2.text} #{noun1.pronoun}."
+    # END THAT OLD CRAP
   end
 
 end

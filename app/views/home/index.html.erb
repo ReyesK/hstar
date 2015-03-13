@@ -1,12 +1,23 @@
+<div class="center ml">
+  <%= image_tag asset_path('xqbtn.png'), class: "generate_button ml" %>
 
+    <div id="loader" class="spinner hide">
+      <div class="rect1"></div>
+      <div class="rect2"></div>
+      <div class="rect3"></div>
+      <div class="rect4"></div>
+      <div class="rect5"></div>
+    </div>
 
-<div class="center">
-
-  <%= image_tag asset_path('xqbtn.png'), class: "generate_button"%>
-
-  <div id="xq" class="excuse_container mtm"></div>
+  <div id="xq" class="excuse_container mbl"></div>
 
   <!-- <div class="mtm">
     <%= link_to 'add word', '/words/new' %>
   </div> -->
+</div>
+
+<div class="mbm">
+  <% flash.each do |key, value| %>
+    <div class="center alert alert-<%= key %>"><%= value %></div>
+  <% end %>
 </div>

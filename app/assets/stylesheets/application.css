@@ -17,12 +17,12 @@
  */
 
  @font-face {
-    font-family: orangeJuice;
-    src: url(orange_juice/orange-juice-2.0.ttf);
+    font-family: myFont;
+    src: url(djb_poppyseed/DJB-Poppyseed.ttf);
 }
 
  html {
-   font-family: orangeJuice;
+   font-family: myFont;
    -webkit-text-size-adjust: 100%;
        -ms-text-size-adjust: 100%;
  }
@@ -78,17 +78,25 @@ body{
   margin-right: auto ;
 }
 
-#xq
-{
-  font-size:500%;
+.hide {
+  display: none;
 }
 
+#xq
+{
+  font-size:300%;
+}
+
+.ml
+{
+  margin: 50px;
+}
 .mtm {
-  margin-top: 75px;
+  margin-top: 10px;
 }
 
 .mtl {
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .mbm {
@@ -96,7 +104,7 @@ body{
 }
 
 .mbl {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .alert{
@@ -112,6 +120,7 @@ body{
   color: white;
   background-color: green;
 }
+<<<<<<< HEAD
 
 
 a {
@@ -174,3 +183,57 @@ a:focus {
   -webkit-box-shadow: inset 0 3px 25px rgba(0, 0, 0, .125);
           box-shadow: inset 0 3px 25px rgba(0, 0, 0, .125);
 }
+.spinner {
+  margin: 100px auto;
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.spinner > div {
+  background-color: #FFF;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+
+  -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+  animation: stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes stretchdelay {
+  0%, 40%, 100% {
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% {
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}
+=======
+>>>>>>> d62b88c9f23e97fd25aff00a2b04eec408d040fe

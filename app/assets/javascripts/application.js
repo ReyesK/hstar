@@ -18,12 +18,18 @@
 
 $(document).ready(function(){
     $(document).tooltip();
-    $(".generate_button").click(function(e){
-        $.ajax({
-            type: 'GET',
-            url: '/generate_excuse.js'
-        });
-    });
+
+  $(".generate_button").click(function(e) {
+      $("#loader").show(); // show loader
+      $("#xq").html(""); // remove text
+      $.ajax({
+          type: 'GET',
+          url: '/generate_excuse.js',
+          success: function () {
+              $("#loader").hide(); // hide loader
+          }
+      });
+  });
 
   var buttonCount = 0;
   var margLeft = 0;

@@ -9,6 +9,7 @@ class HomeController < ApplicationController
   # responds JS
   def generate_excuse
     @excuse = "Because.... " + Word.generate_excuse
+    Excuse.create(excuse: @excuse)
     respond_to do |format|
       format.js
     end

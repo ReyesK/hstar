@@ -52,8 +52,8 @@ class Word < ActiveRecord::Base
 
 
     strings = []
-    strings << "I had to #{adv} #{verb} the #{phrase}"
-    strings << "my #{phrase} is #{adj2}"
+    strings << "I had to #{adv} #{verb} the #{phrase}."
+    strings << "my #{phrase} is #{adj2}."
 
     strings[rand(strings.size)]
 

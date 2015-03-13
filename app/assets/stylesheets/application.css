@@ -58,6 +58,16 @@ body{
 }
 
 .generate_button{
+<<<<<<< HEAD
+=======
+  padding: 5px 5px 5px 5px;
+  box-shadow: 0 0 25px 1px #ffffff;
+  border-radius: 25px;
+  border: 1px solid transparent;
+  background:rgba(255,255,255,.3);
+  padding:15px;
+}
+>>>>>>> 656cd8b1087d5111d847a6c9d3561f9ab85f329b
 
   width: 400px;
   height: 75px;
@@ -123,9 +133,9 @@ a:focus {
 
 .btn {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 25px;
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 500%;
   font-weight: normal;
   line-height: 1.42857143;
   text-align: center;

@@ -42,7 +42,6 @@ class Word < ActiveRecord::Base
     adj2 = Wordnik.words.get_random_word(hasDictionaryDef: true, includePartOfSpeech: 'adjective')["word"]
     noun = Wordnik.words.get_random_word(hasDictionaryDef: true, includePartOfSpeech: 'noun')["word"]
     phrases = Wordnik.words.get_phrases(noun, limit: 10)
-    Rails.logger.debug(phrases)
 
     if phrases.empty?
       phrase = noun

@@ -38,7 +38,9 @@ class Word < ActiveRecord::Base
     adv = Wordnik.words.get_random_word(hasDictionaryDef: true, includePartOfSpeech: 'adverb')["word"]
     adv_def = Wordnik.word.get_definitions(adv, partOfSpeech: 'adverb')[0]["text"]
     verb = Wordnik.words.get_random_word(hasDictionaryDef: true, includePartOfSpeech: 'verb-transitive')["word"]
+    verb_def = Wordnik.words.get_definitions(verb, partOfSpeech: 'verb-transitive')[0]["text"]
     adj = Wordnik.words.get_random_word(hasDictionaryDef: true, includePartOfSpeech: 'adjective')["word"]
+    adj_def = Wordnik.words.get_definitions(adj, partOfSpeech: 'adjective')[0]["text"]
     noun = Wordnik.words.get_random_word(hasDictionaryDef: true, includePartOfSpeech: 'noun')["word"]
     phrases = Wordnik.words.get_phrases(noun, limit: 10)
 
@@ -59,8 +61,8 @@ class Word < ActiveRecord::Base
 
 
     strings = []
-    strings << "I had to <span title=''#{adv_def}''>#{adv}</span> <span>#{verb}</span> the #{phrase_string}"
-    strings << "my #{phrase_string} is <span>#{adj}</span>."
+    strings << "I had to <span title='#{adv_def}'>#{adv}</span> <span title='#{verb_def}'>#{verb}</span> the #{phrase_string}"
+    strings << "my #{phrase_string} is <span title='#{adj_def}'>#{adj}</span>."
 
     strings[rand(strings.size)]
 

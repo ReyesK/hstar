@@ -33,6 +33,7 @@ body{
   -webkit-animation: bgScroll 30s ease infinite;
   -moz-animation: bgScroll 30s ease infinite;
   animation: bgScroll 30s ease infinite;
+  margin: 0px;
 }
 
 @-webkit-keyframes bgScroll {
@@ -85,10 +86,23 @@ body{
   font-size:300%;
 }
 
+#app_info
+{
+  width:100%;
+  background: rgba(255,255,255,.5);
+  text-align: center;
+  padding: 5px;
+}
+
 .mtbl
 {
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 50px;
+}
+
+.mts
+{
+  margin-top: 5px;
 }
 .mtm {
   margin-top: 10px;

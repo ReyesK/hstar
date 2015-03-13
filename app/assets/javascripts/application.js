@@ -26,9 +26,17 @@ $(document).ready(function(){
           type: 'GET',
           url: '/generate_excuse.js',
           success: function () {
-              $("#loader").hide(); // hide loader
+            $("#loader").hide(); // hide loader
           }
       });
+  });
+
+  $(".generate_button").on('mouseover', function(e){
+    $(this).attr("src", $(this).data('over-url'));
+  });
+
+  $(".generate_button").on('mouseout', function(e){
+    $(this).attr("src", $(this).data('out-url'));
   });
 
   var buttonCount = 0;

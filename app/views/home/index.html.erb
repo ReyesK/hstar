@@ -1,6 +1,6 @@
 <div class="center ml">
 
-  <%= image_tag asset_path('xqbtn.png'), onMouseover: "this.src='/assets/xqbtnhover.png';", onMouseout: "this.src='/assets/xqbtn.png'", class: "generate_button mtbl" %>
+  <%= image_tag asset_path('xqbtn.png'), class: "generate_button mtbl", data: {over_url: asset_path('xqbtnhover.png'), out_url: asset_path('xqbtn.png')} %>
     <div id="loader" class="spinner hide">
       <div class="rect1"></div>
       <div class="rect2"></div>

@@ -65,17 +65,6 @@ body{
 }
 
 .generate_button{
-<<<<<<< HEAD
-=======
-  padding: 5px 5px 5px 5px;
-  box-shadow: 0 0 25px 1px #ffffff;
-  border-radius: 25px;
-  border: 1px solid transparent;
-  background:rgba(255,255,255,.3);
-  padding:15px;
-}
->>>>>>> 656cd8b1087d5111d847a6c9d3561f9ab85f329b
-
   width: 400px;
   height: 75px;
 }
